@@ -17,6 +17,14 @@
                                 "nav    aside"
                                 "footer footer";
     }
+    .containerNosotros{
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 100px 300px 275px;
+        grid-template-areas:    "header header"
+                                "nav    main"
+                                "footer footer";
+    }
     header{
         grid-area: header;
         background-color: #224a92;
@@ -73,11 +81,12 @@ main section.sectionSobreMi{
 }
 
 main section article.articleSobreMi{
-    font-size: 1.5vmax;
+    font-size: 2vmax;
     border: inset rgb(78, 255, 24);
     color: rgba(23, 12, 116, 0.87);
-    width: 100%;
-    padding: 0;
+    width: 80%;
+    padding: 5;
+    margin: 5;
 }
 
 /*________________________________________________ASIDE____MOBILE____________________________________________________________*/

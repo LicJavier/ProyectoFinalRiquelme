@@ -20,7 +20,31 @@
     .containerNosotros{
         display: grid;
         grid-template-columns: 25% 75%;
-        grid-template-rows: 100px 300px 275px;
+        grid-template-rows: 200px 500px 275px;
+        grid-template-areas:    "header header"
+                                "nav    main"
+                                "footer footer";
+    }
+    .container__galeria{
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 200px 500px 275px;
+        grid-template-areas:    "header header"
+                                "nav    main"
+                                "footer footer";
+    }
+    .container__bibliografia{
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 200px 500px 275px;
+        grid-template-areas:    "header header"
+                                "nav    main"
+                                "footer footer";
+    }
+    .container__contacto{
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 200px 500px 275px;
         grid-template-areas:    "header header"
                                 "nav    main"
                                 "footer footer";
@@ -64,16 +88,20 @@ nav .listaMenu li{
 }
 
 /*________________________________________________MAIN____MOBILE____________________________________________________________*/
-main{
+.main__home{
     grid-area: main;
     background: linear-gradient(180deg, #224a92, #8fafec);
     text-align: center;
 }
 
-article{
+.article__home{
     padding-top: 10px;
 }
-
+/*_____________________________________________SOBREMI*/
+.main__nosotros{
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    text-align: center;
+}
 main section.sectionSobreMi{
     display: flex;
     flex-direction: column;
@@ -88,6 +116,84 @@ main section article.articleSobreMi{
     padding: 5;
     margin: 5;
 }
+/*_____________________________________________GALERIA*/
+.main__galeria{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    text-align: center;
+}
+
+.titulo__galeria{
+    font-size: 3.5vmax;
+}
+
+.article__galeria iframe{
+    height: 250px;
+    width: 90%;
+}
+/*_____________________________________________BIBLIOGRAFIA*/
+.main__bibliografia{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: 100%;
+    justify-content: space-around;
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    text-align: center;
+}
+
+.subtitulo__bibliografia{
+    font-size: 3.5vmax;
+
+}
+
+/*_____________________________________________CONTACTO*/
+.main__contacto{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(180deg, #224a92, #8fafec);
+}
+
+.titulo__contacto{
+    font-size: 4vmax;
+}
+
+.fieldset__contacto{
+    margin-top: 25px;
+    border: #f00    inset;
+}
+
+.subtitulo__contacto{
+    font-size: 2.6vmax;
+}
+
+.input__texto{
+    font-size: 1.5vmax;
+    border: #f00 inset;
+}
+
+.parrafo_contacto{
+    font-size: 2.5vmax;
+}
+
+.parrafo__boton{
+    text-align: end;
+}
+
+.input__boton{
+    font-size: 2.5vmax;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #133d8c;
+    border-radius: 20%;
+    background-color: rgb(225, 203, 203);
+}
+
 
 /*________________________________________________ASIDE____MOBILE____________________________________________________________*/
 
@@ -155,7 +261,7 @@ aside h4{
     .containerHome{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 80vh 20vh 80vh 40vh;
+        grid-template-rows: 40vh 10vh 80vh 40vh;
         grid-template-areas:    "header header header"
                                 "nav nav nav"
                                 "main main aside"
@@ -164,12 +270,42 @@ aside h4{
 
     .containerNosotros{
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 80vh 20vh 80vh 40vh;
-        grid-template-areas:    "header header"
-                                "nav nav"
-                                "main main"
-                                "footer footer";
+        grid-template-columns: 100%;
+        grid-template-rows: 40vh 10vh 80vh 40vh;
+        grid-template-areas:    "header"
+                                "nav"
+                                "main"
+                                "footer";
+    }
+
+    .container__galeria{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 40vh 10vh 80vh 40vh;
+        grid-template-areas:    "header"
+                                "nav"
+                                "main"
+                                "footer";
+    }
+
+    .container__bibliografia{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 40vh 10vh 80vh 40vh;
+        grid-template-areas:    "header"
+                                "nav"
+                                "main"
+                                "footer";
+    }
+
+    .container__contacto{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 40vh 10vh 80vh 40vh;
+        grid-template-areas:    "header"
+                                "nav"
+                                "main"
+                                "footer";
     }
 
 header{
@@ -239,24 +375,40 @@ a:active{
     color: #f00;
 }
 /*____________________________________________________MAIN____DESKTOP________________________________________________________*/
-main{
+.main__home{
     grid-area: main;
     flex-direction: row;
     justify-content: space-evenly;
     background: linear-gradient(180deg, #224a92, #8fafec);
 }
 
-h3{
+.titulo__home{
     text-align: center;
     font-family: 'Quintessential', cursive;
     width: 100%;
     font-size: 6vmax;
+    animation-duration: 3s;
+    animation-name: efecto__titulo;
+    
 }
+
+@keyframes efecto__titulo {
+    from {
+        margin-top: 100%;
+        width: 300%;
+    }
+    
+    to {
+        margin-bottom: 0%;
+        width: 100%;
+    }
+}
+
 main section h3.tituloSobreMi{
     font-size: 4vmax;
 }
 
-section{
+.section__home{
     width: 100%;
     height: 30vmax;
     color: #000;
@@ -264,7 +416,7 @@ section{
     flex-direction: column;
 
 }
-article{
+.article__home{
     border: 1px solid #000;
     font-family: 'Roboto', sans-serif;
     font-size: 1.8vmax;
@@ -272,14 +424,6 @@ article{
     padding: 5px;
     margin: 2vmax    auto;
     width: 50%;
-}
-
-main section article.articleSobreMi{
-    font-size: 2vmax;
-    border: inset rgb(78, 255, 24);
-    color: rgba(23, 12, 116, 0.87);
-    padding: 2vmax;
-    text-align: justify;
 }
 
 aside{
@@ -303,6 +447,164 @@ aside h4{
     text-align: center;
     margin-bottom: 5px;
     font-size: 2vmax;
+}
+
+/*____________________________________________________GALERIA_________________*/
+.main__galeria{
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-row: 10vh 40vh;
+    grid-template-areas:    "titulo titulo"
+                            "video1 video2";
+    justify-items: center;
+}
+
+.titulo__galeria{
+    grid-area: titulo;
+    text-align: center;
+    font-size: 5vmax;
+    width: 100%;
+}
+
+#article__galeria--1{
+    grid-area: video1;
+}
+
+#article__galeria--2{
+    grid-area: video2;
+}
+
+#article__galeria--1 iframe{
+    width: 600px;
+    height: 350px;
+}
+
+#article__galeria--2 iframe{
+    width: 600px;
+    height: 350px;
+}
+
+/*____________________________________________________BIBLIOGRAFIA_________________*/
+
+.main__bibliografia{
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    display: flex;
+    align-items: center;
+}
+
+.section__bibliografia{
+    margin: 15px;
+    text-align: center;
+}
+
+.subtitulo__bibliografia{
+    font-size: 4vmax;
+}
+
+.ul__bibliografia{
+    font-size: 2.5vmax;
+    padding: 20px;
+}
+
+/*____________________________________________________SOBREMI_________________*/
+
+.main__nosotros{
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    display: flex;
+    justify-content: center;
+}
+
+.sectionSobreMi{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 80%;
+    justify-content: center;
+    
+}
+
+.tituloSobreMi{
+    margin-bottom: 4vmax;
+}
+
+main section article.articleSobreMi{
+    font-size: 2vmax;
+    border: inset rgb(78, 255, 24);
+    color: rgba(23, 12, 116, 0.87);
+    padding: 2vmax;
+    text-align: justify;
+    justify-self: center;
+}
+
+/*____________________________________________________CONTACTO_________________*/
+
+.main__contacto{
+    background: #159;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo__contacto{
+    font-size: 4vmax;
+}
+
+.fieldset__contacto{
+    width: 70vmax;
+    border: rgb(10, 223, 42)    inset   5px;
+    text-align: center;
+    margin-top: 3vmax;
+    background-color: rgba(56, 106, 232, 0.6);
+}
+
+.input__texto::placeholder{
+    color: #223;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.subtitulo__contacto{
+    font-size: 3vmax;
+    font-family: 'Lobster', cursive;
+}
+
+.parrafo_contacto{
+    font-size: 2vmax;
+    margin: 10px auto;
+}
+
+.parrafo__boton{
+    text-align: end;
+}
+
+.input__texto{
+    border: none;
+    border-bottom: rgb(10, 223, 42) 3px solid;
+    width: 60%;
+    background-color: transparent;
+    font-size: 1.5vmax;
+}
+
+.input__texto:focus{
+    background: linear-gradient(to bottom, transparent, #239)
+}
+
+textarea{
+    resize: none    ;
+}
+
+.input__boton{
+    border: none;
+    font-size: 2.5vmax;
+    color: #000;
+    background-color: rgb(223, 211, 211);
+    font-family: 'Staatliches', cursive;
+    width: 100%;
+}
+
+.input__boton:hover{
+    background-color: rgb(10, 223, 42);
+    color: #fff;
 }
 
 /*__________________________________________________FOOTER_____DESKTOP____________________________________________________*/
@@ -390,6 +692,33 @@ footer h4{
                                 "footer footer";
     background: linear-gradient(180deg, #224a92, #8fafec);
     }
+    .container__galeria{
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 250px 900px 350px;
+        grid-template-areas:    "header header"
+                                "nav    main"
+                                "footer footer";
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    }
+    .container__bibliografia{
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 250px 800px 350px;
+        grid-template-areas:    "header header"
+                                "nav    main"
+                                "footer footer";
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    }
+    .container__contacto{
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 250px 800px 350px;
+        grid-template-areas:    "header header"
+                                "nav    main"
+                                "footer footer";
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    }
 
 /*____________________________________________________________TABLET___HEADER_________________________________________________________________*/
 
@@ -465,13 +794,13 @@ nav ul.listaMenu li:hover{
 
 /*____________________________________________________________TABLET___MAIN_________________________________________________________________*/
 
-main{
+.main__home{
     grid-area: main;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-h3{
+.titulo__home{
     text-align: center;
     font-family: 'Quintessential', cursive;
     width: 100%;
@@ -481,7 +810,7 @@ main section h3.tituloSobreMi{
     font-size: 4vmax;
 }
 
-section{
+.section__home{
     width: 100%;
     height: 30vmax;
     color: #000;
@@ -489,7 +818,7 @@ section{
     flex-direction: column;
 
 }
-article{
+.article__home{
     border: 1px solid #000;
     font-family: 'Roboto', sans-serif;
     font-size: 1.8vmax;
@@ -499,6 +828,14 @@ article{
     width: 50%;
     
 }
+.main__nosotros{
+    text-align: center;
+}
+
+.sectionSobreMi{
+    display: flex;
+    flex-direction: column;
+}
 
 main section article.articleSobreMi{
     font-size: 2vmax;
@@ -506,7 +843,91 @@ main section article.articleSobreMi{
     color: rgba(23, 12, 116, 0.87);
     padding: 2vmax;
     text-align: justify;
+    align-self: center;
+    margin-top: 50px;
     width: 80%;
+}
+
+.main__bibliografia{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.subtitulo__bibliografia{
+    font-size: 4vmax;
+    margin: 5px;
+}
+
+.ul__bibliografia li{
+    font-size: 2.5vmax;
+}
+
+
+.main__galeria{
+    width: 100%;
+    height: 900px;
+    text-align: center;
+}
+
+.titulo__galeria{
+    font-size: 4vmax;
+    margin: 5px;
+}
+
+.article__galeria{
+    margin: 30px auto;
+}
+
+.article__galeria iframe{
+    width: 450px;
+    height: 350px;
+    border: 0px;
+    padding: 0%;
+    margin: auto;
+}
+
+.main__contacto{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.titulo__contacto{
+    font-size: 4vmax;
+}
+
+.fieldset__contacto{
+    margin-top: 25px;
+    border: #f00    inset;
+}
+
+.subtitulo__contacto{
+    font-size: 3vmax;
+}
+
+.input__texto{
+    font-size: 1.5vmax;
+    border: #f00 inset;
+}
+
+.parrafo_contacto{
+    font-size: 2.5vmax;
+}
+
+.parrafo__boton{
+    text-align: end;
+}
+
+.input__boton{
+    font-size: 2.5vmax;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #133d8c;
+    border-radius: 20%;
+    background-color: rgb(225, 203, 203);
 }
 
 /*____________________________________________________________TABLET___ASIDE_________________________________________________________________*/

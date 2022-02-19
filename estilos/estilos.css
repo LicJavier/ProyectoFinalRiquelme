@@ -387,21 +387,6 @@ a:active{
     font-family: 'Quintessential', cursive;
     width: 100%;
     font-size: 6vmax;
-    animation-duration: 3s;
-    animation-name: efecto__titulo;
-    
-}
-
-@keyframes efecto__titulo {
-    from {
-        margin-top: 100%;
-        width: 300%;
-    }
-    
-    to {
-        margin-bottom: 0%;
-        width: 100%;
-    }
 }
 
 main section h3.tituloSobreMi{

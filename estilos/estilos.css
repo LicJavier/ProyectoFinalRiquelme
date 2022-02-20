@@ -327,12 +327,24 @@ header div.logo img{
     width: 8vmax;
     height: 8vmax;
 }
+
+.logo img{
+    animation: animacion__logo 3s;
+}
+
+@keyframes animacion__logo {
+    0%{transform: scale(0);}
+    50%{transform: scale(2);}
+    100%{transform: scale(1);}
+}
+
 header.titulo{
     grid-area: tituloHeader;
 }
+
 h1{
     font-family: 'Supermercado One', cursive;
-    font-size: 8vmax;
+    font-size: 6vmax;
     text-align: center;
     align-self: center;
 }
@@ -386,11 +398,14 @@ a:active{
     text-align: center;
     font-family: 'Quintessential', cursive;
     width: 100%;
-    font-size: 6vmax;
+    font-size: 4vmax;
+    animation: animacion__thome 5s;
 }
 
-main section h3.tituloSobreMi{
-    font-size: 4vmax;
+@keyframes animacion__thome {
+    0%{color: #a11;}
+    50%{color: #0aa;}
+    100%{color: #00f;}
 }
 
 .section__home{
@@ -509,6 +524,10 @@ aside h4{
     
 }
 
+main section h3.tituloSobreMi{
+    font-size: 4vmax;
+}
+
 .tituloSobreMi{
     margin-bottom: 4vmax;
 }
@@ -617,7 +636,7 @@ ul.listaFooter a{
 }
 
 ul.listaFooter a:hover{
-    font-size: 2.5vmax;
+    font-size: 2vmax;
 }
 
 .listaFooter img{

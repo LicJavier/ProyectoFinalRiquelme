@@ -11,7 +11,7 @@
     .containerHome{
         display: grid;
         grid-template-columns: 25% 75%;
-        grid-template-rows: 100px 200px 400px 275px;
+        grid-template-rows: 100px 250px 450px 325px;
         grid-template-areas:    "header header"
                                 "nav    main"
                                 "nav    aside"
@@ -20,7 +20,7 @@
     .containerNosotros{
         display: grid;
         grid-template-columns: 25% 75%;
-        grid-template-rows: 200px 500px 275px;
+        grid-template-rows: 200px 500px 325px;
         grid-template-areas:    "header header"
                                 "nav    main"
                                 "footer footer";
@@ -28,7 +28,7 @@
     .container__galeria{
         display: grid;
         grid-template-columns: 25% 75%;
-        grid-template-rows: 200px 500px 275px;
+        grid-template-rows: 200px 500px 325px;
         grid-template-areas:    "header header"
                                 "nav    main"
                                 "footer footer";
@@ -36,7 +36,7 @@
     .container__bibliografia{
         display: grid;
         grid-template-columns: 25% 75%;
-        grid-template-rows: 200px 500px 275px;
+        grid-template-rows: 200px 650px 325px;
         grid-template-areas:    "header header"
                                 "nav    main"
                                 "footer footer";
@@ -44,7 +44,7 @@
     .container__contacto{
         display: grid;
         grid-template-columns: 25% 75%;
-        grid-template-rows: 200px 500px 275px;
+        grid-template-rows: 200px 500px 325px;
         grid-template-areas:    "header header"
                                 "nav    main"
                                 "footer footer";
@@ -59,7 +59,6 @@
     header .titulo{
         font-size: 2vmax;
         text-align: center;
-        margin-left: 10%;
     }
 
     div.logo{
@@ -70,6 +69,10 @@
     margin-left: 15%;
     width: 60%;
     height: 60%;
+}
+header div.logo img{
+    width: 8vmax;
+    height: 8vmax;
 }
     ul{
         list-style-type: none;
@@ -95,7 +98,11 @@ nav{
 nav .listaMenu li{
     margin: 15px auto;
 }
-
+.navbar-dark .navbar-toggler {
+    color: rgba(255,255,255,.55);
+    border-color: #000;
+    margin: auto;
+}
 /*________________________________________________MAIN____MOBILE____________________________________________________________*/
 .main__home{
     grid-area: main;
@@ -104,7 +111,7 @@ nav .listaMenu li{
 }
 
 .article__home{
-    padding-top: 10px;
+    padding: 10px;
 }
 /*_____________________________________________SOBREMI*/
 .main__nosotros{
@@ -156,8 +163,46 @@ main section article.articleSobreMi{
 
 .subtitulo__bibliografia{
     font-size: 3.5vmax;
-
 }
+
+.card-group {
+    display: flex;
+    flex-flow: row wrap;
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    height: auto;
+    width: auto;
+    row-gap: 3vmax;
+}
+.card-group>.card:not(:last-child) {
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    border: none;
+    text-align: center;
+    margin: 0px auto;
+    width: 45vmax;
+}
+.card-group>.card:not(:first-child) {
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    border: none;
+    text-align: center;
+    margin: 0px auto;
+    width: 45vmax;
+}
+
+.card-group>.card:not(:last-child) .card-header, .card-group>.card:not(:last-child) .card-img-top {
+    border-top-right-radius: 0;
+    height: 100px;
+    padding: 1vmax;
+    object-fit: cover;
+    object-position: center -110px ;
+}
+
+.card-group>.card:not(:first-child) .card-header, .card-group>.card:not(:first-child) .card-img-top {
+    border-top-left-radius: 0;
+    padding: 1vmax;
+    height: 100px;
+    object-fit: cover;
+}
+
 
 /*_____________________________________________CONTACTO*/
 .main__contacto{
@@ -388,6 +433,7 @@ nav{
 
 nav ul{
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: row ;
     justify-content: space-evenly;
@@ -415,6 +461,15 @@ a:hover{
 a:active{
     color: #f00;
 }
+
+.navbar-dark .navbar-nav .nav-link{
+    color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #f00;
+}
+
 /*____________________________________________________MAIN____DESKTOP________________________________________________________*/
 .main__home{
     grid-area: main;
@@ -426,6 +481,7 @@ a:active{
 .titulo__home{
     text-align: center;
     font-family: 'Quintessential', cursive;
+    color: #000;
     width: 100%;
     font-size: 4vmax;
     animation: animacion__thome 5s;
@@ -448,11 +504,15 @@ a:active{
 .article__home{
     border: 1px solid #000;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.8vmax;
+    font-size: 1.5vmax;
     text-align: center;
-    padding: 5px;
-    margin: 2vmax    auto;
+    padding: 1vmax;
+    margin: 1.5vmax auto;
     width: 50%;
+}
+
+.article__home p{
+    margin-bottom: 0%;
 }
 
 aside{
@@ -476,6 +536,7 @@ aside h4{
     text-align: center;
     margin-bottom: 5px;
     font-size: 2vmax;
+    color: #000;
 }
 
 /*____________________________________________________GALERIA_________________*/
@@ -505,13 +566,13 @@ aside h4{
 }
 
 #article__galeria--1 iframe{
-    width: 600px;
-    height: 350px;
+    width: 35vmax;
+    height: 25vmax;
 }
 
 #article__galeria--2 iframe{
-    width: 600px;
-    height: 350px;
+    width: 35vmax;
+    height: 25vmax;
 }
 
 /*____________________________________________________BIBLIOGRAFIA_________________*/
@@ -520,20 +581,37 @@ aside h4{
     background: linear-gradient(180deg, #224a92, #8fafec);
     display: flex;
     align-items: center;
+    justify-content: space-around;
 }
-
-.section__bibliografia{
-    margin: 15px;
+.card-group {
+    display: flex;
+    flex-flow: row wrap;
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    height: auto;
+    width: auto;
+    column-gap: 6vmax;
+}
+.card-group>.card:not(:last-child) {
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    border: none;
+    text-align: center;
+}
+.card-group>.card:not(:first-child) {
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    border: none;
     text-align: center;
 }
 
-.subtitulo__bibliografia{
-    font-size: 4vmax;
+.card-group>.card:not(:last-child) .card-header, .card-group>.card:not(:last-child) .card-img-top {
+    border-top-right-radius: 0;
+    height: 20vmax;
+    width: 100%;
 }
 
-.ul__bibliografia{
-    font-size: 2.5vmax;
-    padding: 20px;
+.card-group>.card:not(:first-child) .card-header, .card-group>.card:not(:first-child) .card-img-top {
+    border-top-left-radius: 0;
+    width: 100%;
+    height: 20vmax;
 }
 
 /*____________________________________________________SOBREMI_________________*/
@@ -558,11 +636,11 @@ main section h3.tituloSobreMi{
 }
 
 .tituloSobreMi{
-    margin-bottom: 4vmax;
+    margin-bottom: 3vmax;
 }
 
 main section article.articleSobreMi{
-    font-size: 2vmax;
+    font-size: 1.7vmax;
     border: inset rgb(78, 255, 24);
     color: rgba(23, 12, 116, 0.87);
     padding: 2vmax;
@@ -589,6 +667,7 @@ main section article.articleSobreMi{
     text-align: center;
     margin-top: 3vmax;
     background-color: rgba(56, 106, 232, 0.6);
+    padding: 0;
 }
 
 .input__texto::placeholder{
@@ -603,11 +682,12 @@ main section article.articleSobreMi{
 
 .parrafo_contacto{
     font-size: 2vmax;
-    margin: 10px auto;
+    margin: 7px auto;
 }
 
 .parrafo__boton{
     text-align: end;
+    margin-bottom: 0%;
 }
 
 .input__texto{
@@ -624,11 +704,13 @@ main section article.articleSobreMi{
 
 textarea{
     resize: none    ;
+    height: 13vmax;
 }
 
 .input__boton{
     border: none;
     font-size: 2.5vmax;
+    margin: 0;
     color: #000;
     background-color: rgb(223, 211, 211);
     font-family: 'Staatliches', cursive;
@@ -649,7 +731,7 @@ footer{
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    height: 100%;
+    height: 20vmax;
 }
 footer div{
     width: 30%;
@@ -708,7 +790,7 @@ footer h4{
     .containerHome{
         display: grid;
         grid-template-columns: 20% 80%;
-        grid-template-rows: 200 450 350 200;
+        grid-template-rows: 200 450 450 200;
         grid-template-areas:    "header header"
                                 "nav    main"
                                 "nav    aside"
@@ -825,6 +907,12 @@ nav ul.listaMenu li:hover{
     font-size: 3vmax;
 }
 
+.navbar-dark .navbar-toggler {
+    color: rgba(255,255,255,.55);
+    border-color: rgba(255,255,255,.1);
+    margin: auto;
+}
+
 /*____________________________________________________________TABLET___MAIN_________________________________________________________________*/
 
 .main__home{
@@ -839,13 +927,11 @@ nav ul.listaMenu li:hover{
     width: 100%;
     font-size: 6vmax;
 }
-main section h3.tituloSobreMi{
-    font-size: 4vmax;
-}
+
 
 .section__home{
     width: 100%;
-    height: 30vmax;
+    height: 100%;
     color: #000;
     display: flex;
     flex-direction: column;
@@ -856,11 +942,13 @@ main section h3.tituloSobreMi{
     font-family: 'Roboto', sans-serif;
     font-size: 1.8vmax;
     text-align: center;
+    padding-bottom: 0 ;
     padding: 5px;
-    margin: 2vmax    auto;
+    margin: 1vmax    auto;
     width: 50%;
-    
 }
+
+/*_____________________________________________NOSOTROS___________________*/
 .main__nosotros{
     text-align: center;
 }
@@ -868,6 +956,10 @@ main section h3.tituloSobreMi{
 .sectionSobreMi{
     display: flex;
     flex-direction: column;
+}
+
+main section h3.tituloSobreMi{
+    font-size: 4vmax;
 }
 
 main section article.articleSobreMi{
@@ -881,6 +973,8 @@ main section article.articleSobreMi{
     width: 80%;
 }
 
+/*___________________________________________BIBLIOGRAFIA_____________________________*/
+
 .main__bibliografia{
     display: flex;
     flex-direction: column;
@@ -888,15 +982,47 @@ main section article.articleSobreMi{
     justify-content: space-evenly;
 }
 
+.card-group {
+    display: flex;
+    flex-flow: row wrap;
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    height: auto;
+    width: auto;
+    column-gap: 2vmax;
+    margin: 1vmax;
+}
+.card-group>.card:not(:last-child) {
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    border: none;
+    text-align: center;
+}
+.card-group>.card:not(:first-child) {
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    border: none;
+    text-align: center;
+}
+
+.card-group>.card:not(:last-child) .card-header, .card-group>.card:not(:last-child) .card-img-top {
+    border-top-right-radius: 0;
+    height: 20vmax;
+    width: 100%;
+}
+
+.card-group>.card:not(:first-child) .card-header, .card-group>.card:not(:first-child) .card-img-top {
+    border-top-left-radius: 0;
+    width: 100%;
+    height: 20vmax;
+}
+
 .subtitulo__bibliografia{
-    font-size: 4vmax;
+    font-size: 3vmax;
     margin: 5px;
 }
 
 .ul__bibliografia li{
-    font-size: 2.5vmax;
+    font-size: 2vmax;
 }
-
+/*_________________________________________GALERIA________________*/
 
 .main__galeria{
     width: 100%;

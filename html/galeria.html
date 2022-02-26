@@ -56,12 +56,31 @@
     </nav>
     <main class="main__galeria">
         <h2 class="titulo__galeria">Galería</h2>
-        <article class="article__galeria" id="article__galeria--1">
-            <iframe width="1350" height="494" src="https://www.youtube.com/embed/cE7jKzdwYuU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </article>
-        <article class="article__galeria" id="article__galeria--2">
-            <iframe width="853" height="480" src="https://www.youtube.com/embed/L75G_BfXD4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></article>
-    </main>  
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <iframe width="" src="https://www.youtube.com/embed/cE7jKzdwYuU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="carousel-item">
+                    <iframe width="" src="https://www.youtube.com/embed/L75G_BfXD4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="videos__movil">
+            <iframe width="250" src="https://www.youtube.com/embed/cE7jKzdwYuU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="videos__movil">
+        <iframe width="250" src="https://www.youtube.com/embed/L75G_BfXD4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        </main>  
     <footer>
         <div>
             <h4>Consejos Enfermeros</h4>

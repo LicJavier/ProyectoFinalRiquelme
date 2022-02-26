@@ -66,7 +66,7 @@
     }
 
 .logo img{
-    margin-left: 15%;
+    margin-left: 20%;
     width: 60%;
     height: 60%;
 }
@@ -98,6 +98,11 @@ nav{
 nav .listaMenu li{
     margin: 15px auto;
 }
+
+.navbar {
+    align-content: flex-start;
+}
+
 .navbar-dark .navbar-toggler {
     color: rgba(255,255,255,.55);
     border-color: #000;
@@ -115,22 +120,39 @@ nav .listaMenu li{
 }
 /*_____________________________________________SOBREMI*/
 .main__nosotros{
+    grid-area: main;
     background: linear-gradient(180deg, #224a92, #8fafec);
-    text-align: center;
-}
-main section.sectionSobreMi{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
-main section article.articleSobreMi{
+.card{
+    justify-content: space-around;
+    background-color: rgba(129, 129, 225, 0.433);
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.caja__nosotros{
+    margin-top: 5vmax;
+}
+
+.tituloSobreMi{
+    font-size: 3vmax;
+}
+
+.texto__nosotros{
     font-size: 2vmax;
-    border: inset rgb(78, 255, 24);
     color: rgba(23, 12, 116, 0.87);
-    width: 80%;
-    padding: 5;
-    margin: 5;
+    text-align: center;
+}
+
+.texto__nosotros a{
+    color: rgb(187, 37, 10) ;
+}
+
+.card-text{
+    font-size: 1vmax;
 }
 /*_____________________________________________GALERIA*/
 .main__galeria{
@@ -140,16 +162,28 @@ main section article.articleSobreMi{
     flex-direction: column;
     background: linear-gradient(180deg, #224a92, #8fafec);
     text-align: center;
+    justify-content: space-around;
 }
 
 .titulo__galeria{
-    font-size: 3.5vmax;
+    margin-bottom: 50px;
+}
+
+#carouselExampleControls{
+    width: 220px;
+    margin: 0 auto;
+    height: 230px;
 }
 
 .article__galeria iframe{
-    height: 250px;
-    width: 90%;
+    height: 220px;
+    width: 100%;
 }
+
+#carouselExampleControls{
+    display: none;
+}
+
 /*_____________________________________________BIBLIOGRAFIA*/
 .main__bibliografia{
     display: flex;
@@ -213,59 +247,53 @@ main section article.articleSobreMi{
     align-items: center;
     background: linear-gradient(180deg, #224a92, #8fafec);
 }
-
-.titulo__contacto{
-    font-size: 4vmax;
-}
-
-.fieldset__contacto{
+button {
+    font-family: inherit;
+    font-size: 20px;
+    background: royalblue;
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
     border: none;
-    border: rgb(10, 223, 42)    inset   5px;
-    text-align: center;
-    margin-top: 3vmax;
-    background-color: rgba(56, 106, 232, 0.6);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
 }
 
-.input__texto::placeholder{
-    color: #223;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+button span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
 }
 
-.subtitulo__contacto{
-    font-size: 3.5vmax;
-    font-family: 'Lobster', cursive;
+button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
 }
 
-.input__texto{
-    font-size: 2vmax;
-    border: none;
-    border-bottom: rgb(18, 197, 45) 3px solid;
-    width: 100%;
-    background-color: transparent;
-    text-align: center;
+button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
 }
 
-.input__texto:focus{
-    background: linear-gradient(to bottom, transparent, #239)
+button:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
 }
 
-.parrafo_contacto{
-    font-size: 2.5vmax;
-}
-.input__boton{
-    border: none;
-    font-size: 2.5vmax;
-    color: #000;
-    background-color: rgb(223, 211, 211);
-    font-family: 'Staatliches', cursive;
-    width: 100%;
+button:hover span {
+    transform: translateX(5em);
 }
 
-.input__boton:active{
-    background-color: rgb(10, 223, 42);
-    color: #fff;
+button:active {
+    transform: scale(0.95);
 }
 
+@keyframes fly-1 {
+    from {transform: translateY(0.1em);}
+    to {transform: translateY(-0.1em);}
+}
 textarea{
     resize: none    ;
 }
@@ -330,7 +358,7 @@ aside h4{
 
 /*________________________________________________HEADER__DESKTOP__________________________________________________________*/
 
-@media only screen and (min-width: 1024px){
+@media only screen and (min-width: 992px){
     
     .containerHome{
         display: grid;
@@ -542,12 +570,10 @@ aside h4{
 /*____________________________________________________GALERIA_________________*/
 .main__galeria{
     background: linear-gradient(180deg, #224a92, #8fafec);
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-row: 10vh 40vh;
-    grid-template-areas:    "titulo titulo"
-                            "video1 video2";
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .titulo__galeria{
@@ -557,22 +583,18 @@ aside h4{
     width: 100%;
 }
 
-#article__galeria--1{
-    grid-area: video1;
+#carouselExampleControls{
+    width: 650px;
+    height: 350px;
 }
 
-#article__galeria--2{
-    grid-area: video2;
+#carouselExampleControls iframe{
+    width: 100%;
+    height: 300px;
 }
 
-#article__galeria--1 iframe{
-    width: 35vmax;
-    height: 25vmax;
-}
-
-#article__galeria--2 iframe{
-    width: 35vmax;
-    height: 25vmax;
+.videos__movil{
+    display: none;
 }
 
 /*____________________________________________________BIBLIOGRAFIA_________________*/
@@ -622,30 +644,34 @@ aside h4{
     justify-content: center;
 }
 
-.sectionSobreMi{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 80%;
-    justify-content: center;
-    
-}
-
-main section h3.tituloSobreMi{
-    font-size: 4vmax;
+.card{
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(180deg, #224a92, #8fafec);
 }
 
 .tituloSobreMi{
-    margin-bottom: 3vmax;
+    font-size: 3.6vmax;
+    font-weight: 600;
 }
 
-main section article.articleSobreMi{
-    font-size: 1.7vmax;
-    border: inset rgb(78, 255, 24);
-    color: rgba(23, 12, 116, 0.87);
-    padding: 2vmax;
-    text-align: justify;
-    justify-self: center;
+.caja__nosotros{
+    width: 50vmax;
+}
+
+.texto__nosotros{
+    font-size: 1.5vmax;
+    color: rgb(22, 12, 116);
+    text-align: center;
+    font-weight: 900;
+}
+
+.texto__nosotros a{
+    color: rgb(187, 37, 10) ;
+}
+
+.card-text{
+    font-size: 2vmax;
 }
 
 /*____________________________________________________CONTACTO_________________*/
@@ -655,15 +681,11 @@ main section article.articleSobreMi{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.titulo__contacto{
-    font-size: 4vmax;
+    min-height: 80vh;
 }
 
 .fieldset__contacto{
-    width: 70vmax;
-    border: rgb(10, 223, 42)    inset   5px;
+    width: 40vmax;
     text-align: center;
     margin-top: 3vmax;
     background-color: rgba(56, 106, 232, 0.6);
@@ -678,28 +700,15 @@ main section article.articleSobreMi{
 .subtitulo__contacto{
     font-size: 3vmax;
     font-family: 'Lobster', cursive;
+    text-align: center;
 }
-
-.parrafo_contacto{
-    font-size: 2vmax;
-    margin: 7px auto;
-}
-
 .parrafo__boton{
     text-align: end;
     margin-bottom: 0%;
 }
 
-.input__texto{
-    border: none;
-    border-bottom: rgb(10, 223, 42) 3px solid;
-    width: 60%;
-    background-color: transparent;
-    font-size: 1.5vmax;
-}
-
-.input__texto:focus{
-    background: linear-gradient(to bottom, transparent, #239)
+.form-control:focus{
+    background: linear-gradient(to bottom, transparent, rgba(90, 111, 230, 0.527))
 }
 
 textarea{
@@ -707,19 +716,52 @@ textarea{
     height: 13vmax;
 }
 
-.input__boton{
+button {
+    font-family: inherit;
+    font-size: 20px;
+    background: royalblue;
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
     border: none;
-    font-size: 2.5vmax;
-    margin: 0;
-    color: #000;
-    background-color: rgb(223, 211, 211);
-    font-family: 'Staatliches', cursive;
-    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
 }
 
-.input__boton:hover{
-    background-color: rgb(10, 223, 42);
-    color: #fff;
+button span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+
+button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+    transform: translateX(5em);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+    from {transform: translateY(0.1em);}
+    to {transform: translateY(-0.1em);}
 }
 
 /*__________________________________________________FOOTER_____DESKTOP____________________________________________________*/
@@ -786,7 +828,7 @@ footer h4{
 
 /*____________________________________________________________TABLET____________________________________________________________________*/
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
     .containerHome{
         display: grid;
         grid-template-columns: 20% 80%;
@@ -810,7 +852,7 @@ footer h4{
     .container__galeria{
         display: grid;
         grid-template-columns: 20% 80%;
-        grid-template-rows: 250px 900px 350px;
+        grid-template-rows: 250px 600px 350px;
         grid-template-areas:    "header header"
                                 "nav    main"
                                 "footer footer";
@@ -950,29 +992,34 @@ nav ul.listaMenu li:hover{
 
 /*_____________________________________________NOSOTROS___________________*/
 .main__nosotros{
+    background: linear-gradient(180deg, #224a92, #8fafec);
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    background-color: rgba(129, 129, 225, 0.433);
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tituloSobreMi{
+    font-size: 3vmax;
+}
+
+.texto__nosotros{
+    font-size: 2vmax;
+    color: rgba(23, 12, 116, 0.87);
     text-align: center;
 }
 
-.sectionSobreMi{
-    display: flex;
-    flex-direction: column;
+.texto__nosotros a{
+    color: rgb(187, 37, 10) ;
 }
 
-main section h3.tituloSobreMi{
-    font-size: 4vmax;
+.card-text{
+    font-size: 1.5vmax;
 }
-
-main section article.articleSobreMi{
-    font-size: 2vmax;
-    border: inset rgb(78, 255, 24);
-    color: rgba(23, 12, 116, 0.87);
-    padding: 2vmax;
-    text-align: justify;
-    align-self: center;
-    margin-top: 50px;
-    width: 80%;
-}
-
 /*___________________________________________BIBLIOGRAFIA_____________________________*/
 
 .main__bibliografia{
@@ -1026,7 +1073,7 @@ main section article.articleSobreMi{
 
 .main__galeria{
     width: 100%;
-    height: 900px;
+    height: 600px;
     text-align: center;
 }
 
@@ -1035,11 +1082,19 @@ main section article.articleSobreMi{
     margin: 5px;
 }
 
-.article__galeria{
-    margin: 30px auto;
+.navbar {
+    align-content: flex-start;
 }
 
-.article__galeria iframe{
+#carouselExampleControls{
+    margin-top: 50px;
+}
+
+.videos__movil{
+    display: none;
+}
+
+iframe{
     width: 450px;
     height: 350px;
     border: 0px;
@@ -1055,55 +1110,52 @@ main section article.articleSobreMi{
     align-items: center;
 }
 
-.titulo__contacto{
-    font-size: 4vmax;
-}
-.fieldset__contacto{
+button {
+    font-family: inherit;
+    font-size: 20px;
+    background: royalblue;
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
     border: none;
-    border: rgb(10, 223, 42)    inset   5px;
-    text-align: center;
-    margin-top: 3vmax;
-    background-color: rgba(56, 106, 232, 0.6);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
 }
 
-.input__texto::placeholder{
-    color: #223;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+button span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
 }
 
-.subtitulo__contacto{
-    font-size: 3.5vmax;
-    font-family: 'Lobster', cursive;
+button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
 }
 
-.input__texto{
-    font-size: 2vmax;
-    border: none;
-    border-bottom: rgb(18, 197, 45) 3px solid;
-    width: 100%;
-    background-color: transparent;
-    text-align: center;
+button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
 }
 
-.input__texto:focus{
-    background: linear-gradient(to bottom, transparent, #239)
+button:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
 }
 
-.parrafo_contacto{
-    font-size: 2.5vmax;
-}
-.input__boton{
-    border: none;
-    font-size: 2.5vmax;
-    color: #000;
-    background-color: rgb(223, 211, 211);
-    font-family: 'Staatliches', cursive;
-    width: 100%;
+button:hover span {
+    transform: translateX(5em);
 }
 
-.input__boton:active{
-    background-color: rgb(10, 223, 42);
-    color: #fff;
+button:active {
+    transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+    from {transform: translateY(0.1em);}
+    to {transform: translateY(-0.1em);}
 }
 
 textarea{

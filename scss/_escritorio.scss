@@ -1,0 +1,340 @@
+@import "_colores.scss";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    &:link{
+        color: $colorLink;
+    }
+    &:visited{
+        color: $ColorLinkVisitado;
+    }
+    &:hover{
+        color: $colorLinkHover;
+        font-size: 2.5vmax;
+    }
+    &:active{
+        color: $colorLinkActive;
+    }
+}
+
+ul{
+    list-style-type: none;
+}
+
+@mixin container__desk($display, $gridColumn, $gridRow, $gridArea) {
+    display: $display;
+    grid-template-columns: $gridColumn;
+    grid-template-rows: $gridRow;
+    grid-template-areas: $gridArea;
+}
+
+.containerHome{
+    @include container__desk(grid, 100%, 40vh 10vh 80vh 40vh, "header" "nav" "main" "footer")
+}   
+
+
+header{
+    background-color: $colorFondoHeader;
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "logoHeader tituloHeader";
+    align-items: center;
+    justify-items: center;
+    div.logo{
+        grid-area: logoHeader;
+        img{
+            width: 8vmax;
+            height: 8vmax;
+            animation: animacion__logo 3s;
+        }
+    }
+    div.titulo{
+        grid-area: tituloHeader;
+        h1{
+            font-family: 'Supermercado One', cursive;
+            font-size: 6vmax;
+            text-align: center;
+            align-self: center;
+        }
+    }
+}
+nav{    
+    background-color: $colNav;
+    margin: 0px;
+    height: 100%;
+    text-align: center;
+    grid-area: nav;
+    ul{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row ;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 2vmax;
+        .listaMenu li:hover{
+            font-size: 3vmax;
+        }
+    }
+}
+.navbar-dark .navbar-nav .nav-link{
+    color: $colorLink;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: $colorLinkHover;
+    font-size: 4vmax;
+}
+/*________________________HOME___________________________________________*/
+.main__home{
+    grid-area: main;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background:$colFonDesk;
+    .titulo__home{
+        text-align: center;
+        font-family: 'Quintessential', cursive;
+        color: $colTitulo;
+        width: 100%;
+        font-size: 4vmax;
+        animation: animacion__thome 5s;
+        }
+    .section__home{
+        width: 100%;
+        height: 30vmax;
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        .article__home{
+            border: 1px solid #000;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.5vmax;
+            text-align: center;
+            padding: 1vmax;
+            margin: 1.5vmax auto;
+            width: 50%;
+            p{
+                margin-bottom: 0%;
+            }
+        }
+    }
+}
+/*____________________________________________________GALERIA_________________*/
+.main__galeria{
+    background:$colFonDesk;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    .titulo__galeria{
+        grid-area: titulo;
+        text-align: center;
+        font-size: 5vmax;
+        width: 100%;
+    }
+    #carouselExampleControls{
+        width: 650px;
+        height: 350px;
+        iframe{
+            width: 100%;
+            height: 300px;
+        }
+    }
+    .videos__movil{
+        display: none;
+    }
+}
+/*____________________________________________________BIBLIOGRAFIA_________________*/
+.main__bibliografia{
+    background: $colFonDesk;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .card-group {
+        display: flex;
+        flex-flow: row wrap;
+        background: $colFonDesk;
+        height: auto;
+        width: auto;
+        column-gap: 6vmax;
+    }
+}
+.card-group>.card:not(:last-child) {
+    background: $colFonDesk;
+    border: none;
+    text-align: center;
+    
+}
+.card-group>.card:not(:first-child) {
+    background: $colFonDesk;
+    border: none;
+    text-align: center;
+}
+.card-group>.card:not(:last-child) .card-header, .card-group>.card:not(:last-child) .card-img-top {
+    border-top-right-radius: 0;
+    height: 20vmax;
+    width: 100%;
+}
+.card-group>.card:not(:first-child) .card-header, .card-group>.card:not(:first-child) .card-img-top {
+    border-top-left-radius: 0;
+    width: 100%;
+    height: 20vmax;
+}
+/*____________________________________________________SOBREMI_________________*/
+.main__nosotros{
+    background: $colFonDesk;
+    display: flex;
+    justify-content: center;
+    .card{
+        justify-content: space-around;
+        align-items: center;
+        background: $colFonDesk;
+        .tituloSobreMi{
+            font-size: 3.6vmax;
+            font-weight: 600;
+        }
+        .caja__nosotros{
+            width: 50vmax;
+            .texto__nosotros{
+                font-size: 1.5vmax;
+                color: rgb(22, 12, 116);
+                text-align: center;
+                font-weight: 900;
+                a{
+                    color: rgb(187, 37, 10) ;
+                }
+            }
+        }
+    }
+}
+/*____________________________________________________CONTACTO_________________*/
+.main__contacto{
+    background: #159;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+    .mb-3{
+        width: 30vw;
+    }
+    form .fieldset__contacto{
+        width: 40vmax;
+        text-align: center;
+        margin-top: 1.5vmax;
+        background-color: rgba(56, 106, 232, 0.6);
+        padding: 0;
+        .form-control{
+            font-size: 1.3vmax;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+    .subtitulo__contacto{
+        font-size: 3vmax;
+        font-family: 'Lobster', cursive;
+        text-align: center;
+        color: $colTitulo;
+    }
+    textarea{
+        resize: none;
+        height: 12vmax;
+    }
+    button {
+        font-family: inherit;
+        font-size: 1.5vmax;
+        background: royalblue;
+        color: white;
+        padding: 0.7em 1em;
+        padding-left: 0.9em;
+        display: flex;
+        align-items: center;
+        border: none;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.2s;
+        span {
+            display: block;
+            margin-left: 0.3em;
+            transition: all 0.3s ease-in-out;
+        }
+        svg {
+            display: block;
+            transform-origin: center center;
+            transition: transform 0.3s ease-in-out;
+        }
+        &:hover .svg-wrapper {
+            animation: fly-1 0.6s ease-in-out infinite alternate;
+        }
+        &:hover svg {
+            transform: translateX(1.2em) rotate(45deg) scale(1.1);
+        }
+        &:hover span {
+            transform: translateX(5em);
+        }
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+    
+}
+.form-control:focus{
+    background: linear-gradient(to bottom, transparent, rgba(90, 111, 230, 0.527))
+}
+@keyframes fly-1 {
+    from {transform: translateY(0.1em);}
+    to {transform: translateY(-0.1em);}
+}
+/*_______________________________________________________FOOTER___DESKTOP______________________________________________*/
+footer{
+    grid-area: footer;
+    background-color: $colorFondoFooter;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    div{
+        width: 30%;
+        h4{
+            font-size: 2vmax;
+            margin-top: 15px;
+        }
+        #redes{
+            align-items: center;
+            padding: 10px;
+            align-content: center;
+            text-align: center;
+            width: 100%;
+            .listaFooter{
+                display: flex;
+                width: 100%;
+                align-items: center;
+                padding: 10px;
+                align-content: center;
+                justify-content: space-around;
+                img{
+                    width: 4vmax;
+                    height: 4vmax;
+                }
+            }
+        }
+        ul{
+            padding-left: 0%;
+            list-style-type: none;
+            font-size: 1.5vmax;
+            .listaFooter{
+                a{
+                    display: block;
+                    line-height: 2;
+                    font-size: 1.5vmax;
+                }
+            }
+        }
+    }
+}

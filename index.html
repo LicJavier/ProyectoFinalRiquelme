@@ -54,17 +54,71 @@
             </div>
         </div>
     </nav>
-    <main class="main__home">
-        <h3 class="titulo__home">Bienvenidos!</h3>
-        <section class="section__home">
-            <article class="article__home article__animado" >
-                <p>En esta página vamos a hablar un poco de prácticas saludables y les ofreceremos tips útiles para cuidar nuestra salud.</p>
-            </article>
-            <article class="article__home">
-                <p>Esta iniciativa surge a través una mirada holistica en la sociedad, haciendo hincapie en la promoción de la salud y el bienestar de la comunidad.</p>
-            </article>
-        </section>
-    </main>  
+    <div class="div__main">
+        <main class="main__home">
+            <h3 class="titulo__home">Bienvenidos!</h3>
+            <section class="section__home--1">
+                <article class="article__home article__animado" >
+                    <p>En esta página vamos a hablar un poco de prácticas saludables y les ofreceremos tips útiles para cuidar nuestra salud.</p>
+                </article>
+                <article class="article__home">
+                    <p>Esta iniciativa surge a través una mirada holistica en la sociedad, haciendo hincapie en la promoción de la salud y el bienestar de la comunidad.</p>
+                </article>
+            </section>
+            <section class="section__home--2">
+                <article>
+                    <div class="card">
+                        <a href="https://bancos.salud.gob.ar/sites/default/files/2021-12/calendario-nacional-vacunacion-2022.pdf" target="_blank"><img src="./imagenes/carnet-2018.jpg" class="card-img-top" alt="carnet de vacunación"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">¿Conoces los esquemas de vacunación?</h5>
+                            <p class="card-text">En el siguiente enlace podes encontrar el calendario nacional de vacunación actualizado.</p>
+                            <a href="https://bancos.salud.gob.ar/sites/default/files/2021-12/calendario-nacional-vacunacion-2022.pdf" class="btn btn-primary" target="_blank">Al Calendario Nacional</a>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div class="card">
+                        <a href="./html/imc.html"><img src="./imagenes/IMC.webp" class="card-img-top" alt="carnet de vacunación"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">¿Conoces tu índice de masa corporal?</h5>
+                            <p class="card-text">El Índice de Masa Corporal se calcula simplemente tomando el peso de una persona en Kg y dividiéndolo dos veces por su estatura en metros.</p>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Mira la Tabla acá!</button>
+                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header">
+                                    <h5 id="offcanvasRightLabel">Tabla de Indice de Masa Corporal</h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <table class=" table table-primary">
+                                        <tr>
+                                            <th>IMC</th>
+                                            <th>Nivel de Peso</th>
+                                        </tr>
+                                        <tr class="table-info">
+                                            <td>Por debajo de 18.5</td>
+                                            <td>Bajo Peso</td>
+                                        </tr>
+                                        <tr class="table-primary">
+                                            <td>18.5 – 24.9</td>
+                                            <td>Normal</td>
+                                        </tr>
+                                        <tr class="table-warning">
+                                            <td>25.0 – 29.9</td>
+                                            <td>Sobrepeso</td>
+                                        </tr>
+                                        <tr class="table-danger">
+                                            <td >30.0 o más</td>
+                                            <td >Obesidad</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
     <footer>
         <div class="consejos__footer">
             <h4>Consejos Enfermeros</h4>
@@ -91,10 +145,7 @@
             <div id="redes">
                 <ul class="listaFooter" >
                     <li>
-                        <a href="https://www.instagram.com/javi.essential/?hl=es-la" target="_blank"><img src="imagenes/ig1.png" alt="instagram"></a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/javier.riquelme.165685/" target="_blank"><img src="imagenes/face1.png" alt="facebook"></a>
+                        <a href="https://www.instagram.com/consejosenfermeros/" target="_blank"><img src="imagenes/ig1.png" alt="instagram"></a>
                     </li>
                     <li>
                         <a href="https://twitter.com/JavizSx" target="_blank"><img src="imagenes/twitter1.png" alt="Twitter"></a>

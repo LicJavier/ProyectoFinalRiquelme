@@ -20,22 +20,26 @@ a{
 .containerHome{
     display: grid;
     grid-template-columns: 25% 75%;
-    grid-template-rows: 200px 650px  325px;
+    grid-template-rows: 200px 1100px  325px;
     grid-template-areas:    "header header"
                             "nav    main"
                             "footer footer";
 }
 .containerNosotros{
     @extend .containerHome;
+    grid-template-rows: 200px 550px  325px;
 }
 .container__galeria{
     @extend .containerHome;
+    grid-template-rows: 200px 550px  325px;
 }
 .container__bibliografia{
     @extend .containerHome;
+    grid-template-rows: 200px 750px  325px;
 }
 .container__contacto{
     @extend .containerHome;
+    grid-template-rows: 200px 550px  325px;
 }
 header{
     grid-area: header;
@@ -62,6 +66,11 @@ grid-area: nav;
 background: $colorFondoNavMovil;
 align-content: flex-start;
 text-align: center;
+    div.container-fluid{
+        position: sticky;
+        top: 100px;
+        left: 0px;
+    }
     .listaMenu li{
     margin: 15px auto;
     }
@@ -76,12 +85,56 @@ text-align: center;
     grid-area: main;
     background: $colFondoMovil;
     text-align: center;
+    height: 100%;
     .titulo__home{
         color: $colTitulo;
+        font-family: 'Quintessential', cursive;
     }
-    .article__home{
-        padding: 10px;
-        color: $colarticle;
+    .section__home--1{
+            .article__home{
+            padding: 10px;
+            color: $colarticle;
+        }
+    }
+    .section__home--2{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        margin-top: 10px;
+        .card{
+            background-color: $colorSectionCard;
+            margin: 5px;
+            width: 250px;
+            height: 350px;
+            .card-body{
+                .card-title{
+                    text-align: center;
+                    font-size: 1.5vmax;
+                }
+                .card-text{
+                    font-size: 1.3vmax;
+                    text-align: left;
+                }
+                a{
+                    font-size: 1.5vmax;
+                }
+                button{
+                    font-size: 1.5vmax;
+                }
+            }
+            .offcanvas-header{
+                background-color: $backgroundCanvas1T;
+                h5{
+                    color: $offCanvasTitleT;
+                }
+            }
+            .offcanvas-body{
+                background-color: $backgroundCanvas2T;
+            }
+            button.btn-close.text-reset{
+                color: #fff;
+            }
+        }
     }
 }
 /*_____________________________________________SOBREMI*/
@@ -92,6 +145,7 @@ text-align: center;
     justify-content: center;
     .tituloSobreMi{
         font-size: 3vmax;
+        color: $colTitulo;
     }
     .card{
         justify-content: space-around;
@@ -122,6 +176,7 @@ text-align: center;
     justify-content: space-around;
     .titulo__galeria{
         margin-bottom: 50px;
+        color: $colTitulo;
     }
     .article__galeria iframe{
         height: 220px;

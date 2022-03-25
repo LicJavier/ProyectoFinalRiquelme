@@ -33,7 +33,7 @@ ul{
 }
 
 .containerHome{
-    @include container__desk(grid, 100%, 40vh 10vh 80vh 40vh, "header" "nav" "main" "footer")
+    @include container__desk(grid, 100%, 40vh 10vh 100vh 40vh, "header" "nav" "main" "footer")
 }   
 
 
@@ -92,7 +92,7 @@ nav{
     .main__home{
         display: grid;
         grid-template-columns: 50% 50%;
-        grid-template-rows: 10vh 70vh;
+        grid-template-rows: 20vh 70vh;
         background:$colFonDesk;
         height: 100%;
         justify-items: center;
@@ -103,7 +103,6 @@ nav{
             text-align: center;
             font-family: 'Quintessential', cursive;
             color: $colTitulo;
-            margin-top: 2vmax;
             font-size: 4vmax;
             animation: animacion__thome 5s;
             }

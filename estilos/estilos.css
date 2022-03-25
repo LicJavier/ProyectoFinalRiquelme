@@ -43,7 +43,9 @@
     display: grid;
     grid-template-columns: 25% 75%;
     grid-template-rows: 200px 1100px  325px;
-    grid-template-areas: "header header" "nav    main" "footer footer"; }
+    grid-template-areas: "header header"
+ "nav    main"
+ "footer footer"; }
   .containerNosotros {
     grid-template-rows: 200px 550px  325px; }
   .container__galeria {
@@ -600,7 +602,7 @@
   .containerHome, .containerNosotros, .container__galeria, .container__bibliografia, .container__contacto {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 40vh 10vh 80vh 40vh;
+    grid-template-rows: 40vh 10vh 100vh 40vh;
     grid-template-areas: "header" "nav" "main" "footer"; }
   header {
     background-color: #224a92;
@@ -647,7 +649,7 @@
     .div__main .main__home {
       display: grid;
       grid-template-columns: 50% 50%;
-      grid-template-rows: 10vh 70vh;
+      grid-template-rows: 20vh 70vh;
       background: linear-gradient(180deg, #224a92, #8fafec);
       height: 100%;
       justify-items: center;
@@ -658,7 +660,6 @@
         text-align: center;
         font-family: 'Quintessential', cursive;
         color: #000;
-        margin-top: 2vmax;
         font-size: 4vmax;
         animation: animacion__thome 5s; }
       .div__main .main__home .section__home--1 {
